@@ -17,10 +17,10 @@ export function Hero() {
     <section
       id="home"
       dir={isRTL ? "rtl" : "ltr"}
-      className="relative min-h-screen flex flex-col items-center justify-between sm:justify-center gap-6 sm:gap-6 px-4 pt-24 sm:pt-28 pb-16 sm:pb-20"
+      className="relative min-h-screen flex flex-col items-center justify-between sm:justify-center gap-6 sm:gap-6 px-4 pt-24 sm:pt-28 pb-28 sm:pb-20"
     >
       {/* Role */}
-      <Reveal y={10}>
+      <Reveal y={10} className="mt-6 sm:mt-0">
         <p
           dir={isRTL ? "rtl" : "ltr"}
           style={{
