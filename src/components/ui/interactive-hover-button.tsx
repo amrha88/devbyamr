@@ -13,8 +13,8 @@ const InteractiveHoverButton = React.forwardRef<HTMLAnchorElement, InteractiveHo
       <a
         ref={ref}
         className={cn(
-          "group relative inline-flex w-48 sm:w-56 items-center justify-center overflow-hidden rounded-full px-6 py-3.5 text-center font-bold text-black cursor-pointer",
-          "shadow-[0_0_20px_6px_rgba(195,228,29,0.4),0_0_45px_16px_rgba(195,228,29,0.24),0_0_90px_30px_rgba(195,228,29,0.12),inset_0_0_18px_rgba(195,228,29,0.2)] transition-shadow duration-300 group-hover:shadow-[0_0_30px_8px_rgba(195,228,29,0.6),0_0_65px_22px_rgba(195,228,29,0.35),0_0_130px_45px_rgba(195,228,29,0.18),inset_0_0_24px_rgba(195,228,29,0.28)]",
+          "group relative inline-flex w-40 sm:w-44 items-center justify-center overflow-hidden rounded-full px-6 py-3.5 text-center font-bold text-black cursor-pointer",
+          "shadow-[0_0_10px_3px_rgba(195,228,29,0.22),0_0_24px_8px_rgba(195,228,29,0.13),0_0_45px_15px_rgba(195,228,29,0.06)] transition-shadow duration-300 group-hover:shadow-[0_0_16px_5px_rgba(195,228,29,0.35),0_0_35px_12px_rgba(195,228,29,0.2),0_0_70px_24px_rgba(195,228,29,0.1)]",
           className
         )}
         style={{ backgroundColor: "#C3E41D", ...style }}

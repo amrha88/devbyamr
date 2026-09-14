@@ -1,21 +1,22 @@
 import { Mail } from "lucide-react"
-import { GithubIcon, LinkedinIcon } from "@/components/icons"
+import { GithubIcon, InstagramIcon, LinkedinIcon } from "@/components/icons"
 import { Reveal } from "@/components/ui/reveal"
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
 import { SectionHeading } from "@/components/sections/section-heading"
 import { ARABIC_FONT, useLanguage } from "@/lib/i18n"
 
 const links = [
-  { label: "Email", href: "mailto:hello@example.com", icon: Mail },
+  { label: "Email", href: "mailto:amrhabiballa8@gmail.com", icon: Mail },
   { label: "GitHub", href: "https://github.com", icon: GithubIcon },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: LinkedinIcon },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/amr-habib-alla-01bb28355/", icon: LinkedinIcon },
+  { label: "Instagram", href: "https://www.instagram.com/amrhabib.297", icon: InstagramIcon },
 ]
 
 export function Contact() {
   const { t, isRTL } = useLanguage()
 
   return (
-    <section id="contact" className="py-24 sm:py-32 px-6">
+    <section id="contact" className="py-16 sm:py-20 px-6">
       <div className="max-w-screen-md mx-auto text-center">
         <SectionHeading eyebrow={t("contact.eyebrow")} title={t("contact.title")} />
 
@@ -31,7 +32,7 @@ export function Contact() {
         <Reveal delay={100} as="span" className="inline-block">
           <InteractiveHoverButton
             text={t("contact.cta")}
-            href="mailto:hello@example.com"
+            href="mailto:amrhabiballa8@gmail.com"
             reverse={isRTL}
             dir={isRTL ? "rtl" : "ltr"}
             style={{ fontFamily: isRTL ? ARABIC_FONT : undefined }}

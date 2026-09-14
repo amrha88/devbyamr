@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Original, uncompressed media (kept locally, not shipped)
+/media-originals/

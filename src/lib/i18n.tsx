@@ -16,12 +16,18 @@ const translations = {
     "about.eyebrow": "Who I am",
     "about.title": "About Me",
     "about.p1":
-      "I'm Amr, a software developer who enjoys turning ideas into clean, functional products. I care about writing code that's easy to read, easy to maintain, and actually solves the problem in front of me.",
+      "I'm Amr, an Information Systems student with a strong foundation in Java, Python, SQL, and object-oriented programming, and a growing focus on full-stack web development — this site included. I care about writing code that's clean, well-structured, and solves a real problem, not just code that runs.",
     "about.p2":
-      "This is placeholder copy — replace it with your own story: how you got into development, what you're focused on now, and what kind of work excites you.",
+      "Before development, I picked up real responsibility early: managing shift operations as a bar supervisor, coaching swimming and basketball, and representing my community at an international leadership camp in Finland. That background shapes how I work today — dependable, detail-oriented, and comfortable owning a problem end to end. I'm fluent in Arabic, Hebrew, and English.",
     "about.tools": "Tools & Technologies",
     "projects.eyebrow": "Selected work",
-    "projects.title": "Projects",
+    "projects.title": "Recent Projects",
+    "projects.featured.title": "chefalaa.co.il",
+    "projects.featured.description":
+      "A private chef website | from layout to motion, designed and built to show how the final product could look and feel.",
+    "projects.featured2.title": "Locanda",
+    "projects.featured2.description":
+      "A restaurant website mockup | from layout to motion, designed and built to show how the final product could look and feel.",
     "experience.eyebrow": "Where I've worked",
     "experience.title": "Experience",
     "contact.eyebrow": "Get in touch",
@@ -46,12 +52,18 @@ const translations = {
     "about.eyebrow": "من أنا",
     "about.title": "نبذة عني",
     "about.p1":
-      "أنا عمرو، مطور برمجيات أستمتع بتحويل الأفكار إلى منتجات نظيفة وعملية. أهتم بكتابة كود سهل القراءة، سهل الصيانة، ويحل المشكلة المطروحة فعليًا.",
+      "أنا عمرو، طالب نظم معلومات أبني أساسًا قويًا في جافا وبايثون و SQL والبرمجة كائنية التوجه، مع تركيز متنامٍ على تطوير الويب المتكامل — وهذا الموقع أحد نتائج ذلك. أهتم بكتابة كود نظيف ومنظم يحل مشكلة حقيقية، لا مجرد كود يعمل.",
     "about.p2":
-      "هذا نص مبدئي — استبدله بقصتك الخاصة: كيف بدأت في البرمجة، وما الذي تركز عليه الآن، ونوع العمل الذي يثير حماسك.",
+      "قبل البرمجة، تحمّلت مسؤوليات حقيقية مبكرًا: إدارة عمليات المناوبات كمسؤول بار، وتدريب السباحة وكرة السلة، وتمثيل مجتمعي في معسكر قيادة دولي في فنلندا. هذه الخلفية تنعكس في أسلوب عملي اليوم: دقيق وموثوق وقادر على تولي المشكلة من بدايتها لنهايتها. أتحدث العربية والعبرية والإنجليزية بطلاقة.",
     "about.tools": "الأدوات والتقنيات",
     "projects.eyebrow": "أعمال مختارة",
     "projects.title": "المشاريع",
+    "projects.featured.title": "شيف علاء",
+    "projects.featured.description":
+      "تصميم مبدئي لموقع مطعم — من التخطيط إلى الحركة، صُمم ليُظهر كيف سيبدو ويشعر المنتج النهائي.",
+    "projects.featured2.title": "لوكاندا",
+    "projects.featured2.description":
+      "تصميم مبدئي لموقع مطعم — من التخطيط إلى الحركة، صُمم ليُظهر كيف سيبدو ويشعر المنتج النهائي.",
     "experience.eyebrow": "أماكن عملت بها",
     "experience.title": "الخبرات",
     "contact.eyebrow": "تواصل معي",

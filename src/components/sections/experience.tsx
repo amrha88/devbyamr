@@ -30,7 +30,7 @@ export function Experience() {
   const { t } = useLanguage()
 
   return (
-    <section id="experience" className="py-24 sm:py-32 px-6">
+    <section id="experience" className="py-16 sm:py-20 px-6">
       <div className="max-w-screen-md mx-auto">
         <SectionHeading eyebrow={t("experience.eyebrow")} title={t("experience.title")} />
 

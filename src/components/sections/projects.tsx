@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react"
 import { GithubIcon } from "@/components/icons"
 import { Reveal } from "@/components/ui/reveal"
+import { VideoScrollHero } from "@/components/ui/video-scroll-hero"
 import { SectionHeading } from "@/components/sections/section-heading"
 import { useLanguage } from "@/lib/i18n"
 
@@ -13,22 +14,6 @@ interface Project {
 }
 
 const projects: Project[] = [
-  {
-    title: "Project One",
-    description:
-      "A short description of this project — what it does, the problem it solves, and any interesting technical details worth mentioning.",
-    tags: ["React", "TypeScript", "Tailwind"],
-    liveUrl: "#",
-    repoUrl: "#",
-  },
-  {
-    title: "Project Two",
-    description:
-      "A short description of this project — what it does, the problem it solves, and any interesting technical details worth mentioning.",
-    tags: ["Next.js", "Node.js", "PostgreSQL"],
-    liveUrl: "#",
-    repoUrl: "#",
-  },
   {
     title: "Project Three",
     description:
@@ -49,9 +34,27 @@ export function Projects() {
   const { t } = useLanguage()
 
   return (
-    <section id="projects" className="py-24 sm:py-32 px-6">
+    <section id="projects" className="py-16 sm:py-20 px-6">
       <div className="max-w-screen-lg mx-auto">
-        <SectionHeading eyebrow={t("projects.eyebrow")} title={t("projects.title")} />
+        <div className="text-center">
+          <SectionHeading eyebrow={t("projects.eyebrow")} title={t("projects.title")} />
+        </div>
+
+        <VideoScrollHero
+          videoSrc="/videos/chef-alaa-mockup-720.mp4"
+          title={t("projects.featured.title")}
+          description={t("projects.featured.description")}
+          bgText="CHEF ALAA"
+          className="mb-10 sm:mb-14"
+        />
+
+        <VideoScrollHero
+          videoSrc="/videos/locanda-mockup-720.mp4"
+          title={t("projects.featured2.title")}
+          description={t("projects.featured2.description")}
+          bgText="LOCANDA"
+          className="mb-10 sm:mb-14"
+        />
 
         <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
           {projects.map((project, i) => (

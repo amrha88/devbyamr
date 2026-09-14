@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
-import { LanguageToggle } from "@/components/language-toggle"
 import { useScrollSpy } from "@/hooks/use-scroll-spy"
 import { ARABIC_FONT, useLanguage, type TranslationKey } from "@/lib/i18n"
 
@@ -26,14 +25,14 @@ export function Navbar() {
     <header className="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-lg">
       <nav
         dir={isRTL ? "rtl" : "ltr"}
-        className="flex items-center justify-between px-5 sm:px-8 lg:px-12 py-4"
+        className="relative flex items-center justify-between px-5 sm:px-8 lg:px-12 py-4"
       >
         <a href="#home" className="shrink-0 select-none flex items-center gap-2.5" aria-label="DevByAmr home">
-          <img src="/icon.svg" alt="" className="h-7 w-7 sm:h-8 sm:w-8 shrink-0" />
-          <img src={LOGO} alt="DevByAmr" className="h-7 sm:h-8 w-auto object-contain" />
+          <img src="/icon.svg" alt="" className="h-6 w-6 sm:h-7 sm:w-7 shrink-0" />
+          <img src={LOGO} alt="DevByAmr" className="h-7 sm:h-8 w-auto object-contain mt-1" />
         </a>
 
-        <div className="hidden md:flex items-center gap-1 bg-white/5 border border-white/10 rounded-full p-1">
+        <div className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2 bg-white/5 border border-white/10 rounded-full p-1">
           {navLinks.map((link) => {
             const isActive = activeId === link.id
             return (
@@ -76,10 +75,6 @@ export function Navbar() {
           })}
         </div>
 
-        <div className="hidden md:flex items-center">
-          <LanguageToggle />
-        </div>
-
         <button
           type="button"
           className="md:hidden flex items-center justify-center w-9 h-9 text-neutral-300 hover:text-white transition-colors duration-300"
@@ -107,9 +102,6 @@ export function Navbar() {
                 {t(link.key)}
               </a>
             ))}
-          </div>
-          <div className="py-4 border-t border-white/10 flex justify-start">
-            <LanguageToggle />
           </div>
         </div>
       )}

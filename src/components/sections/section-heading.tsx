@@ -20,7 +20,7 @@ export function SectionHeading({ eyebrow, title }: { eyebrow: string; title: str
         animateBy="words"
         direction="top"
         dir={isRTL ? "rtl" : "ltr"}
-        className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white"
+        className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white"
         style={isRTL ? { fontFamily: ARABIC_FONT } : undefined}
       />
     </div>

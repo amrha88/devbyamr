@@ -18,6 +18,8 @@ export function useScrollSpy(ids: string[]) {
             a.boundingClientRect.top < b.boundingClientRect.top ? a : b
           )
           setActiveId(topMost.target.id)
+        } else {
+          setActiveId(null)
         }
       },
       { rootMargin: "-45% 0px -50% 0px", threshold: 0 }

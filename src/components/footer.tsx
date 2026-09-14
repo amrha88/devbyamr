@@ -1,5 +1,5 @@
 import { Mail } from "lucide-react"
-import { GithubIcon, LinkedinIcon } from "@/components/icons"
+import { GithubIcon, InstagramIcon, LinkedinIcon } from "@/components/icons"
 import { Reveal } from "@/components/ui/reveal"
 import { ARABIC_FONT, useLanguage, type TranslationKey } from "@/lib/i18n"
 
@@ -14,9 +14,10 @@ const navLinks: { key: TranslationKey; href: string }[] = [
 ]
 
 const socialLinks = [
-  { label: "Email", href: "mailto:hello@example.com", icon: Mail },
+  { label: "Email", href: "mailto:amrhabiballa8@gmail.com", icon: Mail },
   { label: "GitHub", href: "https://github.com", icon: GithubIcon },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: LinkedinIcon },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/amr-habib-alla-01bb28355/", icon: LinkedinIcon },
+  { label: "Instagram", href: "https://www.instagram.com/amrhabib.297", icon: InstagramIcon },
 ]
 
 export function Footer() {
