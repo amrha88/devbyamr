@@ -28,7 +28,8 @@ export function Navbar() {
         dir={isRTL ? "rtl" : "ltr"}
         className="flex items-center justify-between px-5 sm:px-8 lg:px-12 py-4"
       >
-        <a href="#home" className="shrink-0 select-none" aria-label="DevByAmr home">
+        <a href="#home" className="shrink-0 select-none flex items-center gap-2.5" aria-label="DevByAmr home">
+          <img src="/icon.svg" alt="" className="h-7 w-7 sm:h-8 sm:w-8 shrink-0" />
           <img src={LOGO} alt="DevByAmr" className="h-7 sm:h-8 w-auto object-contain" />
         </a>
 
