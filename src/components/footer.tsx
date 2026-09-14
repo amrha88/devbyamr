@@ -1,0 +1,82 @@
+import { Mail } from "lucide-react"
+import { GithubIcon, LinkedinIcon } from "@/components/icons"
+import { Reveal } from "@/components/ui/reveal"
+import { ARABIC_FONT, useLanguage, type TranslationKey } from "@/lib/i18n"
+
+const LOGO = "/assets/logo-white.png"
+
+const navLinks: { key: TranslationKey; href: string }[] = [
+  { key: "nav.home", href: "#home" },
+  { key: "nav.about", href: "#about" },
+  { key: "nav.projects", href: "#projects" },
+  { key: "nav.experience", href: "#experience" },
+  { key: "nav.contact", href: "#contact" },
+]
+
+const socialLinks = [
+  { label: "Email", href: "mailto:hello@example.com", icon: Mail },
+  { label: "GitHub", href: "https://github.com", icon: GithubIcon },
+  { label: "LinkedIn", href: "https://linkedin.com", icon: LinkedinIcon },
+]
+
+export function Footer() {
+  const { t, isRTL } = useLanguage()
+
+  return (
+    <footer
+      dir={isRTL ? "rtl" : "ltr"}
+      className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center rounded-t-4xl border-t border-neutral-800 px-6 py-12 lg:py-16"
+      style={isRTL ? { fontFamily: ARABIC_FONT } : undefined}
+    >
+      <div className="absolute top-0 right-1/2 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/20 blur" />
+
+      <div className="grid w-full gap-10 md:grid-cols-3 md:gap-8">
+        <Reveal className="space-y-4">
+          <img src={LOGO} alt="DevByAmr" className="h-7 w-auto object-contain" />
+          <p className="text-sm text-neutral-500">
+            © {new Date().getFullYear()} Amr HA. {t("footer.rights")}
+          </p>
+        </Reveal>
+
+        <div className="grid grid-cols-2 gap-8 md:col-span-2">
+          <Reveal delay={100}>
+            <h3 className="text-xs font-semibold tracking-wide uppercase text-neutral-500">
+              {t("footer.navigate")}
+            </h3>
+            <ul className="mt-4 space-y-2 text-sm">
+              {navLinks.map((link) => (
+                <li key={link.key}>
+                  <a
+                    href={link.href}
+                    className="text-neutral-500 hover:text-white transition-colors duration-300"
+                  >
+                    {t(link.key)}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+
+          <Reveal delay={200}>
+            <h3 className="text-xs font-semibold tracking-wide uppercase text-neutral-500">
+              {t("footer.connect")}
+            </h3>
+            <ul className="mt-4 space-y-2 text-sm">
+              {socialLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="inline-flex items-center gap-1.5 text-neutral-500 hover:text-white transition-colors duration-300"
+                  >
+                    <link.icon className="size-4" />
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </div>
+    </footer>
+  )
+}
