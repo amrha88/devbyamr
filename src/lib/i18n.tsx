@@ -28,6 +28,9 @@ const translations = {
     "projects.featured2.title": "Locanda",
     "projects.featured2.description":
       "A restaurant website mockup | from layout to motion, designed and built to show how the final product could look and feel.",
+    "projects.featured3.title": "Finance Consulting office",
+    "projects.featured3.description":
+      "A financial consulting website mockup | from layout to motion, designed and built to show how the final product could look and feel.",
     "experience.eyebrow": "Where I've worked",
     "experience.title": "Experience",
     "contact.eyebrow": "Get in touch",
@@ -64,6 +67,9 @@ const translations = {
     "projects.featured2.title": "لوكاندا",
     "projects.featured2.description":
       "تصميم مبدئي لموقع مطعم — من التخطيط إلى الحركة، صُمم ليُظهر كيف سيبدو ويشعر المنتج النهائي.",
+    "projects.featured3.title": "تساحي تافور",
+    "projects.featured3.description":
+      "تصميم مبدئي لموقع استشارات مالية — من التخطيط إلى الحركة، صُمم ليُظهر كيف سيبدو ويشعر المنتج النهائي.",
     "experience.eyebrow": "أماكن عملت بها",
     "experience.title": "الخبرات",
     "contact.eyebrow": "تواصل معي",

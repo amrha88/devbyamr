@@ -1,7 +1,7 @@
 import { Mail } from "lucide-react"
 import { GithubIcon, InstagramIcon, LinkedinIcon } from "@/components/icons"
 import { Reveal } from "@/components/ui/reveal"
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
+import { LiquidGlassButton } from "@/components/ui/liquid-glass-button"
 import { SectionHeading } from "@/components/sections/section-heading"
 import { ARABIC_FONT, useLanguage } from "@/lib/i18n"
 
@@ -30,7 +30,7 @@ export function Contact() {
         </Reveal>
 
         <Reveal delay={100} as="span" className="inline-block">
-          <InteractiveHoverButton
+          <LiquidGlassButton
             text={t("contact.cta")}
             href="mailto:amrhabiballa8@gmail.com"
             reverse={isRTL}

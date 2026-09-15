@@ -2,7 +2,7 @@ import { useState } from "react"
 import { ChevronDown, User } from "lucide-react"
 import { BlurText } from "@/components/ui/blur-text"
 import { Reveal } from "@/components/ui/reveal"
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
+import { LiquidGlassButton } from "@/components/ui/liquid-glass-button"
 import { ARABIC_FONT, useLanguage } from "@/lib/i18n"
 
 const ACCENT = "#C3E41D"
@@ -88,12 +88,12 @@ export function Hero() {
         />
 
         <Reveal delay={450} y={12}>
-          <InteractiveHoverButton
+          <LiquidGlassButton
             text={t("hero.cta")}
             href="#contact"
             reverse={isRTL}
             dir={isRTL ? "rtl" : "ltr"}
-            style={{ backgroundColor: "#ffffff", ...arabicStyle }}
+            style={arabicStyle}
           />
         </Reveal>
       </div>
