@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useLayoutEffect, useRef, useState } from "react"
 
 interface ProjectItem {
   videoSrc: string
@@ -13,15 +13,18 @@ interface ScrollPinnedProjectsProps {
   className?: string
 }
 
-const HOLD_FRACTION = 0.78
-const LEAD_HOLD_VH = 40
-const TRAIL_HOLD_VH = 50
+const HOLD_FRACTION = 0.4
+const LEAD_HOLD_VH = 10
+const TRAIL_HOLD_VH = 25
 
 export function ScrollPinnedProjects({ items, className = "" }: ScrollPinnedProjectsProps) {
   const trackRef = useRef<HTMLDivElement>(null)
+  const bgTextWrapRef = useRef<HTMLDivElement>(null)
+  const bgTextSpanRef = useRef<HTMLSpanElement>(null)
   const [phase, setPhase] = useState<"before" | "pinned" | "after">("before")
   const [displayIndex, setDisplayIndex] = useState(0)
   const [rotation, setRotation] = useState(0)
+  const [driftPx, setDriftPx] = useState(0)
 
   useEffect(() => {
     let raf = 0
@@ -77,23 +80,60 @@ export function ScrollPinnedProjects({ items, className = "" }: ScrollPinnedProj
   }, [items.length])
 
   const current = items[displayIndex]
+
+  useLayoutEffect(() => {
+    function measure() {
+      const wrap = bgTextWrapRef.current
+      const span = bgTextSpanRef.current
+      if (!wrap || !span) {
+        setDriftPx(0)
+        return
+      }
+      const overflow = Math.max(0, span.scrollWidth - wrap.clientWidth)
+      setDriftPx(overflow / 2)
+    }
+
+    measure()
+    window.addEventListener("resize", measure)
+    return () => window.removeEventListener("resize", measure)
+  }, [current.bgText])
+
+  const driftDuration = Math.min(16, Math.max(7, driftPx / 20))
+
   const trackHeight = `${items.length * 100 + LEAD_HOLD_VH + TRAIL_HOLD_VH}dvh`
 
   const shellClass =
     phase === "pinned"
       ? "fixed inset-x-0 top-0 h-dvh w-full z-20 bg-black"
       : phase === "after"
-        ? "absolute inset-x-0 bottom-0 h-dvh w-full bg-black"
-        : "absolute inset-x-0 top-0 h-dvh w-full bg-black"
+        ? "absolute inset-x-0 top-[calc(100%-100dvh)] h-dvh w-full bg-black"
+        : "absolute inset-x-0 top-0 w-full bg-black"
+
+  const innerClass =
+    phase === "before"
+      ? "relative w-full flex items-center justify-center px-4 py-14 sm:py-16"
+      : "relative w-full h-full flex items-center justify-center px-4 pt-20 sm:pt-24"
 
   return (
     <div ref={trackRef} className={`relative ${className}`} style={{ height: trackHeight }}>
       <div className={shellClass}>
-        <div className="relative w-full h-full flex items-center justify-center px-4 pt-20 sm:pt-24">
+        <div className={innerClass}>
           <div className="relative w-full max-w-4xl">
             {current.bgText && (
-              <div className="absolute inset-x-0 -top-8 sm:-top-14 flex items-start justify-center pointer-events-none select-none overflow-hidden">
-                <span className="text-[14vw] sm:text-[9vw] font-extrabold tracking-tight text-white/10 whitespace-nowrap leading-none">
+              <div
+                ref={bgTextWrapRef}
+                className="absolute inset-x-0 -top-8 sm:-top-14 flex items-start justify-center pointer-events-none select-none overflow-hidden"
+              >
+                <span
+                  ref={bgTextSpanRef}
+                  className="text-[14vw] sm:text-[9vw] font-extrabold tracking-tight text-white/10 whitespace-nowrap leading-none"
+                  style={
+                    {
+                      "--drift": `${driftPx}px`,
+                      animation: driftPx > 0 ? `wordmark-drift ${driftDuration}s ease-in-out infinite` : "none",
+                    } as React.CSSProperties
+                  }
+                >
                   {current.bgText}
                 </span>
               </div>

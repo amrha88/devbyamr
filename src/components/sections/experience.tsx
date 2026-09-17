@@ -39,14 +39,9 @@ export function Experience() {
             <Reveal
               key={job.role + job.company}
               delay={i * 120}
-              className="grid sm:grid-cols-[140px_1fr] gap-2 sm:gap-6 border-b border-neutral-800 pb-10 last:border-b-0 last:pb-0"
+              className="grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-2 sm:gap-6 border-b border-neutral-800 pb-10 last:border-b-0 last:pb-0"
             >
-              <p
-                className="text-sm font-medium text-neutral-500"
-                style={{ fontFamily: "'Fira Code', monospace" }}
-              >
-                {job.period}
-              </p>
+              <p className="text-sm font-medium text-neutral-500">{job.period}</p>
               <div>
                 <h3 className="text-lg sm:text-xl font-bold text-white">
                   {job.role}

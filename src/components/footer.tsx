@@ -31,7 +31,7 @@ export function Footer() {
     >
       <div className="absolute top-0 right-1/2 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/20 blur" />
 
-      <div className="grid w-full gap-10 md:grid-cols-3 md:gap-8">
+      <div className="grid w-full grid-cols-1 gap-10 md:grid-cols-3 md:gap-8">
         <Reveal className="space-y-4">
           <img src={LOGO} alt="DevByAmr" className="h-7 w-auto object-contain" />
           <p className="text-sm text-neutral-500">

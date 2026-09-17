@@ -23,3 +23,12 @@ export function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   )
 }
+
+export function WhatsappIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M21 11.5a8.5 8.5 0 0 1-11.8 7.8L3 21l1.7-6.2A8.5 8.5 0 1 1 21 11.5Z" />
+      <path d="M9 9.3c.1-.3.3-.5.6-.5h.5c.2 0 .3.1.4.3l.7 1.5c.1.2 0 .4-.1.5l-.5.6c-.1.1-.1.3 0 .4.3.6 1.6 2 2.5 2.4.1.1.3 0 .4-.1l.5-.6c.1-.1.3-.2.5-.1l1.5.7c.2.1.3.3.3.5v.4c0 .4-.3.7-.7.8-.7.2-1.8.2-3.4-.6-1.9-1-3-2.6-3.2-2.9-.2-.3-.9-1.4-.9-2.4 0-.5.2-.8.4-1Z" />
+    </svg>
+  )
+}

@@ -83,8 +83,8 @@ export function Hero() {
           animateBy="words"
           direction="top"
           dir={isRTL ? "rtl" : "ltr"}
-          className="max-w-sm sm:max-w-md text-[18px] sm:text-[17px] md:text-[18px] leading-relaxed justify-center text-center transition-colors duration-300 text-neutral-400 hover:text-white"
-          style={{ fontFamily: isRTL ? ARABIC_FONT : "'Antic', sans-serif" }}
+          className="max-w-sm sm:max-w-md text-[18px] sm:text-[17px] md:text-[18px] font-medium leading-relaxed justify-center text-center transition-colors duration-300 text-neutral-400 hover:text-white"
+          style={arabicStyle}
         />
 
         <Reveal delay={450} y={12}>
