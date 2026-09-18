@@ -10,10 +10,15 @@ const translations = {
     "nav.experience": "EXPERIENCE",
     "nav.contact": "CONTACT",
     "nav.socials": "My Socials",
+    "hero.greeting": "Hey, I'm a",
     "hero.role": "Full-Stack Developer",
     "hero.description":
-      "Full-stack developer dedicated to building high-quality digital products that balance aesthetic precision with technical excellence",
+      "Full-stack developer dedicated to building high quality digital products that balance aesthetic precision with technical excellence",
     "hero.cta": "Get in touch",
+    "hero.focus1": "Freelance Development",
+    "hero.focus2": "Web Development",
+    "hero.focus3": "Full-Stack Engineering",
+    "hero.focus4": "Clean, Scalable Code",
     "about.eyebrow": "Who I am",
     "about.title": "About Me",
     "about.intro":
@@ -74,10 +79,15 @@ const translations = {
     "nav.experience": "الخبرات",
     "nav.contact": "تواصل",
     "nav.socials": "حساباتي الاجتماعية",
+    "hero.greeting": "أهلاً، أنا",
     "hero.role": "مطور برمجيات متكامل",
     "hero.description":
       "أبني مواقع ومنتجات رقمية عالية الجودة — أجمع بين التصميم النظيف والهندسة المتقنة.",
     "hero.cta": "تواصل معي",
+    "hero.focus1": "تطوير مستقل",
+    "hero.focus2": "تطوير الويب",
+    "hero.focus3": "هندسة برمجيات متكاملة",
+    "hero.focus4": "كود نظيف وقابل للتوسع",
     "about.eyebrow": "من أنا",
     "about.title": "نبذة عني",
     "about.intro":

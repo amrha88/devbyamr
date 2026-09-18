@@ -2,11 +2,12 @@ import { useState } from "react"
 import { ChevronDown, User } from "lucide-react"
 import { BlurText } from "@/components/ui/blur-text"
 import { Reveal } from "@/components/ui/reveal"
-import { LiquidGlassButton } from "@/components/ui/liquid-glass-button"
-import { ARABIC_FONT, useLanguage } from "@/lib/i18n"
+import { ARABIC_FONT, useLanguage, type TranslationKey } from "@/lib/i18n"
 
 const ACCENT = "#C3E41D"
 const PROFILE_SRC = "/assets/profile.jpg"
+
+const focusAreas: TranslationKey[] = ["hero.focus1", "hero.focus2", "hero.focus3", "hero.focus4"]
 
 export function Hero() {
   const [imageFailed, setImageFailed] = useState(false)
@@ -17,52 +18,68 @@ export function Hero() {
     <section
       id="home"
       dir={isRTL ? "rtl" : "ltr"}
-      className="relative min-h-screen flex flex-col items-center justify-between sm:justify-center gap-6 sm:gap-6 px-4 pt-24 sm:pt-28 pb-28 sm:pb-20"
+      className="relative min-h-screen flex items-center px-6 pt-28 sm:pt-24 pb-24 sm:pb-20"
     >
-      {/* Role */}
-      <Reveal y={10} className="mt-6 sm:mt-0">
-        <p
-          dir={isRTL ? "rtl" : "ltr"}
-          style={{
-            fontFamily: isRTL ? ARABIC_FONT : "'Fira Code', monospace",
-            textShadow: "0 0 8px rgba(255,255,255,0.55), 0 0 18px rgba(255,255,255,0.3)",
-          }}
-          className="text-sm sm:text-sm font-semibold tracking-[0.25em] uppercase text-white"
-        >
-          {t("hero.role")}
-        </p>
-      </Reveal>
+      <div className="max-w-screen-xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-16 items-center">
+        {/* Text */}
+        <div className="text-start order-2 lg:order-1">
+          <Reveal y={10}>
+            <p
+              style={{ color: ACCENT, ...arabicStyle }}
+              className="text-sm sm:text-base font-semibold tracking-[0.25em] uppercase mb-4"
+            >
+              {t("hero.greeting")}
+            </p>
+          </Reveal>
 
-      {/* Centered Name + Photo cutout */}
-      <div className="relative text-center">
-        <div>
           <BlurText
-            text="AMR"
+            text={t("hero.role")}
             delay={100}
-            animateBy="letters"
+            animateBy="words"
             direction="top"
-            dir="ltr"
-            className="font-bold text-[172px] min-[375px]:text-[200px] sm:text-[160px] md:text-[195px] lg:text-[230px] xl:text-[260px] leading-[0.75] tracking-tighter uppercase justify-center whitespace-nowrap"
-            style={{ color: ACCENT, fontFamily: "'Fira Code', monospace" }}
+            dir={isRTL ? "rtl" : "ltr"}
+            className="text-4xl min-[375px]:text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tight text-white justify-start"
+            style={arabicStyle}
           />
-        </div>
-        <div>
-          <BlurText
-            text="HA"
-            delay={100}
-            animateBy="letters"
-            direction="top"
-            dir="ltr"
-            className="font-bold text-[172px] min-[375px]:text-[200px] sm:text-[160px] md:text-[195px] lg:text-[230px] xl:text-[260px] leading-[0.75] tracking-tighter uppercase justify-center whitespace-nowrap"
-            style={{ color: ACCENT, fontFamily: "'Fira Code', monospace" }}
-          />
+
+          <Reveal delay={200} y={12}>
+            <p
+              style={arabicStyle}
+              className="mt-7 max-w-md text-lg sm:text-xl leading-relaxed text-neutral-400"
+            >
+              {t("hero.description")}
+            </p>
+          </Reveal>
+
+          <Reveal delay={350} y={12} className="mt-9">
+            <div
+              dir={isRTL ? "rtl" : "ltr"}
+              className="grid grid-cols-2 gap-x-8 gap-y-6 max-w-xs"
+            >
+              {focusAreas.map((key, i) => (
+                <div key={key} className="text-start">
+                  <p className="text-sm font-bold tracking-wide" style={{ color: ACCENT }}>
+                    #{String(i + 1).padStart(2, "0")}
+                  </p>
+                  <p
+                    style={arabicStyle}
+                    className="mt-1.5 text-sm sm:text-base font-semibold text-white leading-snug"
+                  >
+                    {t(key)}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
 
-        {/* Profile Picture */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-          <div className="w-[112px] h-[190px] min-[375px]:w-[130px] min-[375px]:h-[220px] sm:w-[103px] sm:h-[174px] md:w-[120px] md:h-[203px] lg:w-[140px] lg:h-[237px] xl:w-[158px] xl:h-[267px] rounded-full overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-110 cursor-pointer bg-neutral-800 flex items-center justify-center">
+        {/* Photo frame */}
+        <Reveal delay={150} className="order-1 lg:order-2 flex justify-center">
+          <div className="relative w-[180px] h-[225px] min-[375px]:w-[200px] min-[375px]:h-[250px] sm:w-[320px] sm:h-[400px] lg:w-full lg:max-w-[400px] lg:h-[520px] xl:max-w-[460px] xl:h-[580px] rounded-[2rem] overflow-hidden shadow-2xl bg-neutral-900">
             {imageFailed ? (
-              <User className="w-1/2 h-1/2 text-neutral-500" strokeWidth={1.5} />
+              <div className="w-full h-full flex items-center justify-center">
+                <User className="w-1/3 h-1/3 text-neutral-600" strokeWidth={1.5} />
+              </div>
             ) : (
               <img
                 src={PROFILE_SRC}
@@ -71,30 +88,12 @@ export function Hero() {
                 onError={() => setImageFailed(true)}
               />
             )}
+            <div className="pointer-events-none absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/10" />
+            <div
+              className="pointer-events-none absolute inset-0 rounded-[2rem] ring-1 ring-inset"
+              style={{ boxShadow: `0 0 0 1px ${ACCENT}33, 0 0 40px -8px ${ACCENT}66` }}
+            />
           </div>
-        </div>
-      </div>
-
-      {/* Description + Contact Me button */}
-      <div className="flex flex-col items-center gap-6 sm:contents">
-        <BlurText
-          text={t("hero.description")}
-          delay={150}
-          animateBy="words"
-          direction="top"
-          dir={isRTL ? "rtl" : "ltr"}
-          className="max-w-sm sm:max-w-md text-[18px] sm:text-[17px] md:text-[18px] font-medium leading-relaxed justify-center text-center transition-colors duration-300 text-neutral-400 hover:text-white"
-          style={arabicStyle}
-        />
-
-        <Reveal delay={450} y={12}>
-          <LiquidGlassButton
-            text={t("hero.cta")}
-            href="#contact"
-            reverse={isRTL}
-            dir={isRTL ? "rtl" : "ltr"}
-            style={arabicStyle}
-          />
         </Reveal>
       </div>
 

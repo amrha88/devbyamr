@@ -1,4 +1,4 @@
-import { ScrollPinnedProjects } from "@/components/ui/scroll-pinned-projects"
+import { ProjectShowcase } from "@/components/ui/project-showcase"
 import { SectionHeading } from "@/components/sections/section-heading"
 import { useLanguage } from "@/lib/i18n"
 
@@ -22,7 +22,7 @@ export function Projects() {
         </div>
       </div>
 
-      <ScrollPinnedProjects
+      <ProjectShowcase
         items={[
           {
             videoSrc: "/videos/chef-alaa-mockup-720.mp4",
