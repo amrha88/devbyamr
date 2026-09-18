@@ -18,15 +18,15 @@ export function Hero() {
     <section
       id="home"
       dir={isRTL ? "rtl" : "ltr"}
-      className="relative min-h-screen flex items-center px-6 pt-28 sm:pt-24 pb-24 sm:pb-20"
+      className="relative min-h-screen flex items-center px-6 pt-20 sm:pt-24 pb-10 sm:pb-20"
     >
-      <div className="max-w-screen-xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-16 items-center">
+      <div className="max-w-screen-xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-4 lg:gap-16 items-center">
         {/* Text */}
         <div className="text-start order-2 lg:order-1">
           <Reveal y={10}>
             <p
               style={{ color: ACCENT, ...arabicStyle }}
-              className="text-sm sm:text-base font-semibold tracking-[0.25em] uppercase mb-4"
+              className="text-sm sm:text-base font-semibold tracking-[0.25em] uppercase mb-2 sm:mb-4"
             >
               {t("hero.greeting")}
             </p>
@@ -38,23 +38,23 @@ export function Hero() {
             animateBy="words"
             direction="top"
             dir={isRTL ? "rtl" : "ltr"}
-            className="text-4xl min-[375px]:text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tight text-white justify-start"
+            className="text-3xl min-[375px]:text-4xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tight text-white justify-start"
             style={arabicStyle}
           />
 
           <Reveal delay={200} y={12}>
             <p
               style={arabicStyle}
-              className="mt-7 max-w-md text-lg sm:text-xl leading-relaxed text-neutral-400"
+              className="mt-4 sm:mt-7 max-w-md text-base sm:text-xl leading-snug sm:leading-relaxed text-neutral-400"
             >
               {t("hero.description")}
             </p>
           </Reveal>
 
-          <Reveal delay={350} y={12} className="mt-9">
+          <Reveal delay={350} y={12} className="mt-5 sm:mt-9">
             <div
               dir={isRTL ? "rtl" : "ltr"}
-              className="grid grid-cols-2 gap-x-8 gap-y-6 max-w-xs"
+              className="grid grid-cols-2 gap-x-8 gap-y-3 sm:gap-y-6 max-w-xs"
             >
               {focusAreas.map((key, i) => (
                 <div key={key} className="text-start">
@@ -75,7 +75,7 @@ export function Hero() {
 
         {/* Photo frame */}
         <Reveal delay={150} className="order-1 lg:order-2 flex justify-center">
-          <div className="relative w-[180px] h-[225px] min-[375px]:w-[200px] min-[375px]:h-[250px] sm:w-[320px] sm:h-[400px] lg:w-full lg:max-w-[400px] lg:h-[520px] xl:max-w-[460px] xl:h-[580px] rounded-[2rem] overflow-hidden shadow-2xl bg-neutral-900">
+          <div className="relative w-[130px] h-[163px] min-[375px]:w-[150px] min-[375px]:h-[188px] sm:w-[320px] sm:h-[400px] lg:w-full lg:max-w-[400px] lg:h-[520px] xl:max-w-[460px] xl:h-[580px] rounded-[2rem] overflow-hidden shadow-2xl bg-neutral-900">
             {imageFailed ? (
               <div className="w-full h-full flex items-center justify-center">
                 <User className="w-1/3 h-1/3 text-neutral-600" strokeWidth={1.5} />

@@ -32,7 +32,7 @@ export function Navbar() {
     <header className="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-lg">
       <nav
         dir={isRTL ? "rtl" : "ltr"}
-        className="relative flex items-center justify-between px-5 sm:px-8 lg:px-12 py-8 sm:py-4"
+        className="relative flex items-center justify-between px-5 sm:px-8 lg:px-12 py-4"
       >
         <a href="#home" className="shrink-0 select-none flex items-center gap-2.5" aria-label="DevByAmr home">
           <img src="/icon.svg" alt="" className="h-7 w-7 sm:h-7 sm:w-7 shrink-0" />
