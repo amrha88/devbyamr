@@ -32,7 +32,9 @@ export function Contact() {
         <Reveal delay={100} as="span" className="inline-block">
           <LiquidGlassButton
             text={t("contact.cta")}
-            href="mailto:amrhabiballa8@gmail.com"
+            href="https://www.instagram.com/hajalianwar?stkn=MWM1eXJwMGFhNjczMw=="
+            target="_blank"
+            rel="noopener noreferrer"
             reverse={isRTL}
             dir={isRTL ? "rtl" : "ltr"}
             style={{ fontFamily: isRTL ? ARABIC_FONT : undefined }}
