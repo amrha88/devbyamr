@@ -19,7 +19,7 @@ export function Hero() {
     <section
       id="home"
       dir={isRTL ? "rtl" : "ltr"}
-      className="relative min-h-screen flex items-center px-8 pt-10 sm:pt-24 pb-1 sm:pb-20"
+      className="relative min-h-dvh flex items-center px-8 pt-10 sm:pt-24 pb-1 sm:pb-20"
     >
       <div className="max-w-screen-xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 sm:gap-10 lg:gap-16 items-center mt-16 sm:mt-0">
         {/* Text */}
