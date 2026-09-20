@@ -21,13 +21,13 @@ export function Hero() {
       dir={isRTL ? "rtl" : "ltr"}
       className="relative min-h-dvh flex items-center px-8 pt-10 sm:pt-24 pb-1 sm:pb-20"
     >
-      <div className="max-w-screen-xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 sm:gap-10 lg:gap-16 items-center mt-16 sm:mt-0">
+      <div className="max-w-screen-xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 sm:gap-10 lg:gap-16 items-center mt-10 sm:mt-0">
         {/* Text */}
-        <div className="text-start order-2 lg:order-1 mt-6 sm:mt-0">
+        <div className="text-start order-2 lg:order-1 mt-4 sm:mt-0">
           <Reveal y={10}>
             <p
               style={{ color: ACCENT, ...arabicStyle }}
-              className="text-sm sm:text-base font-semibold tracking-[0.15em] mb-6 sm:mb-4"
+              className="text-sm sm:text-base font-semibold tracking-[0.15em] mb-4 sm:mb-4"
             >
               {t("hero.greeting")}
             </p>
@@ -39,23 +39,23 @@ export function Hero() {
             animateBy="words"
             direction="top"
             dir={isRTL ? "rtl" : "ltr"}
-            className="text-5xl min-[375px]:text-6xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tight text-white justify-start"
+            className="text-4xl min-[375px]:text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tight text-white justify-start"
             style={arabicStyle}
           />
 
           <Reveal delay={200} y={12}>
             <p
               style={arabicStyle}
-              className="mt-7 sm:mt-7 max-w-[320px] sm:max-w-md text-sm sm:text-xl leading-snug sm:leading-relaxed text-neutral-400"
+              className="mt-5 sm:mt-7 max-w-[320px] sm:max-w-md text-sm sm:text-xl leading-snug sm:leading-relaxed text-neutral-400"
             >
               {t("hero.description")}
             </p>
           </Reveal>
 
-          <Reveal delay={350} y={12} className="mt-7 sm:mt-9">
+          <Reveal delay={350} y={12} className="mt-5 sm:mt-9">
             <div
               dir={isRTL ? "rtl" : "ltr"}
-              className="grid grid-cols-2 gap-x-8 sm:gap-x-10 gap-y-12 sm:gap-y-10 max-w-md sm:max-w-lg"
+              className="grid grid-cols-2 gap-x-6 sm:gap-x-10 gap-y-8 sm:gap-y-10 max-w-md sm:max-w-lg"
             >
               {focusAreas.map((key, i) => (
                 <div key={key} className="text-start">
@@ -64,7 +64,7 @@ export function Hero() {
                   </p>
                   <p
                     style={{ ...arabicStyle, whiteSpace: !isRTL && i < 3 ? "pre-line" : undefined }}
-                    className="mt-1.5 text-base sm:text-base font-semibold text-white leading-snug"
+                    className="mt-1 text-base sm:text-base font-semibold text-white leading-snug"
                   >
                     {!isRTL && i < 3 ? t(key).replace(" ", "\n") : t(key)}
                   </p>
@@ -76,7 +76,7 @@ export function Hero() {
 
         {/* Photo frame */}
         <Reveal delay={150} className="order-1 lg:order-2 flex justify-center -mt-20 sm:mt-0">
-          <div className="relative w-[160px] h-[200px] min-[375px]:w-[180px] min-[375px]:h-[225px] sm:w-[320px] sm:h-[400px] lg:w-full lg:max-w-[400px] lg:h-[520px] xl:max-w-[460px] xl:h-[580px] rounded-[2rem] overflow-hidden shadow-2xl bg-neutral-900">
+          <div className="relative w-[150px] h-[188px] min-[375px]:w-[160px] min-[375px]:h-[200px] sm:w-[320px] sm:h-[400px] lg:w-full lg:max-w-[400px] lg:h-[520px] xl:max-w-[460px] xl:h-[580px] rounded-[2rem] overflow-hidden shadow-2xl bg-neutral-900">
             {imageFailed ? (
               <div className="w-full h-full flex items-center justify-center">
                 <User className="w-1/3 h-1/3 text-neutral-600" strokeWidth={1.5} />
