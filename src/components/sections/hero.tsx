@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ChevronDown, User } from "lucide-react"
+import { User } from "lucide-react"
 import { BlurText } from "@/components/ui/blur-text"
 import { Reveal } from "@/components/ui/reveal"
 import { ARABIC_FONT, useLanguage, type TranslationKey } from "@/lib/i18n"
@@ -97,15 +97,6 @@ export function Hero() {
           </div>
         </Reveal>
       </div>
-
-      {/* Scroll Indicator */}
-      <a
-        href="#about"
-        className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 transition-colors duration-300"
-        aria-label="Scroll to about section"
-      >
-        <ChevronDown className="animate-scroll-hint w-5 h-5 md:w-8 md:h-8 text-neutral-400 hover:text-white transition-colors duration-300" />
-      </a>
     </section>
   )
 }
