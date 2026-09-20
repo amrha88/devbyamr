@@ -15,6 +15,9 @@ const ACCENT = "#C3E41D"
 const quoteKeys: { textKey: TranslationKey; highlightKey: TranslationKey }[] = [
   { textKey: "about.quote1Text", highlightKey: "about.quote1Highlight" },
   { textKey: "about.quote2Text", highlightKey: "about.quote2Highlight" },
+  { textKey: "about.quote3Text", highlightKey: "about.quote3Highlight" },
+  { textKey: "about.quote4Text", highlightKey: "about.quote4Highlight" },
+  { textKey: "about.quote5Text", highlightKey: "about.quote5Highlight" },
 ]
 
 function QuoteRotator({
@@ -25,7 +28,7 @@ function QuoteRotator({
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
-    const id = setInterval(() => setIndex((i) => (i + 1) % quotes.length), 3200)
+    const id = setInterval(() => setIndex((i) => (i + 1) % quotes.length), 7200)
     return () => clearInterval(id)
   }, [quotes.length])
 
@@ -51,11 +54,15 @@ const skills = [
   "Java",
   "Python",
   "SQL",
+  "HTML",
+  "CSS",
   "JavaScript",
   "TypeScript",
   "React",
   "Tailwind CSS",
-  "Git",
+  "AWS Services",
+  "Github",
+  "Microsoft office",
 ]
 
 const brands = [
@@ -72,11 +79,11 @@ const stats: { value: string; labelKey: TranslationKey }[] = [
 ]
 
 const timeline: { titleKey: TranslationKey; subtitleKey: TranslationKey; active?: boolean }[] = [
-  { titleKey: "about.path1Title", subtitleKey: "about.path1Subtitle", active: true },
+  { titleKey: "about.path4Title", subtitleKey: "about.path4Subtitle" },
   { titleKey: "about.path2Title", subtitleKey: "about.path2Subtitle" },
   { titleKey: "about.path3Title", subtitleKey: "about.path3Subtitle" },
-  { titleKey: "about.path4Title", subtitleKey: "about.path4Subtitle" },
   { titleKey: "about.path5Title", subtitleKey: "about.path5Subtitle" },
+  { titleKey: "about.path1Title", subtitleKey: "about.path1Subtitle", active: true },
 ]
 
 export function About() {

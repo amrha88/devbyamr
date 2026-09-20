@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef, useState } from "react"
+import { ArrowUpRight } from "lucide-react"
 import { Reveal } from "@/components/ui/reveal"
 
 const ACCENT = "#C3E41D"
@@ -9,6 +10,7 @@ interface ProjectItem {
   description: string
   bgText?: string
   startTime?: number
+  url?: string
 }
 
 interface ProjectShowcaseProps {
@@ -83,6 +85,17 @@ function ProjectCard({ item, delay }: { item: ProjectItem; delay: number }) {
           <div className="relative text-center max-w-lg">
             <h3 className="text-lg sm:text-xl font-bold text-white">{item.title}</h3>
             <p className="mt-1.5 text-sm sm:text-base text-neutral-400">{item.description}</p>
+            {item.url && (
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/link mt-5 inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-5 py-2 text-sm font-semibold text-white hover:bg-white/10 hover:border-white/25 transition-colors duration-300"
+              >
+                Show me more
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+              </a>
+            )}
           </div>
         </div>
       </div>

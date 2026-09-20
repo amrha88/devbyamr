@@ -44,21 +44,27 @@ export function BlurText({
 
   return (
     <p ref={ref} dir={dir} className={`inline-flex flex-wrap ${className}`} style={style}>
-      {segments.map((segment, i) => (
-        <span
-          key={i}
-          style={{
-            display: "inline-block",
-            filter: inView ? "blur(0px)" : "blur(10px)",
-            opacity: inView ? 1 : 0,
-            transform: inView ? "translateY(0)" : `translateY(${direction === "top" ? "-20px" : "20px"})`,
-            transition: `all 0.5s ease-out ${i * delay}ms`,
-          }}
-        >
-          {segment === " " ? " " : segment}
-          {animateBy === "words" && i < segments.length - 1 ? " " : ""}
-        </span>
-      ))}
+      {segments.map((segment, i) => {
+        if (segment === "\n") {
+          return <span key={i} className="basis-full h-0" aria-hidden="true" />
+        }
+        const nextIsBreak = segments[i + 1] === "\n"
+        return (
+          <span
+            key={i}
+            style={{
+              display: "inline-block",
+              filter: inView ? "blur(0px)" : "blur(10px)",
+              opacity: inView ? 1 : 0,
+              transform: inView ? "translateY(0)" : `translateY(${direction === "top" ? "-20px" : "20px"})`,
+              transition: `all 0.5s ease-out ${i * delay}ms`,
+            }}
+          >
+            {segment === " " ? " " : segment}
+            {animateBy === "words" && i < segments.length - 1 && !nextIsBreak ? " " : ""}
+          </span>
+        )
+      })}
     </p>
   )
 }

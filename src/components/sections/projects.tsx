@@ -30,6 +30,7 @@ export function Projects() {
             description: t("projects.featured.description"),
             bgText: "CHEF ALAA",
             startTime: 6,
+            url: "https://www.chefalaa.co.il/",
           },
           {
             videoSrc: "/videos/locanda-mockup-720.mp4",

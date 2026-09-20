@@ -13,48 +13,49 @@ export function Hero() {
   const [imageFailed, setImageFailed] = useState(false)
   const { t, isRTL } = useLanguage()
   const arabicStyle = isRTL ? { fontFamily: ARABIC_FONT } : undefined
+  const roleText = isRTL ? t("hero.role") : t("hero.role").replace(" ", " \n ")
 
   return (
     <section
       id="home"
       dir={isRTL ? "rtl" : "ltr"}
-      className="relative min-h-screen flex items-center px-6 pt-20 sm:pt-24 pb-10 sm:pb-20"
+      className="relative min-h-screen flex items-center px-8 pt-10 sm:pt-24 pb-1 sm:pb-20"
     >
-      <div className="max-w-screen-xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-4 lg:gap-16 items-center">
+      <div className="max-w-screen-xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 sm:gap-10 lg:gap-16 items-center mt-16 sm:mt-0">
         {/* Text */}
-        <div className="text-start order-2 lg:order-1">
+        <div className="text-start order-2 lg:order-1 mt-6 sm:mt-0">
           <Reveal y={10}>
             <p
               style={{ color: ACCENT, ...arabicStyle }}
-              className="text-sm sm:text-base font-semibold tracking-[0.25em] uppercase mb-2 sm:mb-4"
+              className="text-sm sm:text-base font-semibold tracking-[0.15em] mb-6 sm:mb-4"
             >
               {t("hero.greeting")}
             </p>
           </Reveal>
 
           <BlurText
-            text={t("hero.role")}
+            text={roleText}
             delay={100}
             animateBy="words"
             direction="top"
             dir={isRTL ? "rtl" : "ltr"}
-            className="text-3xl min-[375px]:text-4xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tight text-white justify-start"
+            className="text-5xl min-[375px]:text-6xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tight text-white justify-start"
             style={arabicStyle}
           />
 
           <Reveal delay={200} y={12}>
             <p
               style={arabicStyle}
-              className="mt-4 sm:mt-7 max-w-md text-base sm:text-xl leading-snug sm:leading-relaxed text-neutral-400"
+              className="mt-7 sm:mt-7 max-w-[320px] sm:max-w-md text-sm sm:text-xl leading-snug sm:leading-relaxed text-neutral-400"
             >
               {t("hero.description")}
             </p>
           </Reveal>
 
-          <Reveal delay={350} y={12} className="mt-5 sm:mt-9">
+          <Reveal delay={350} y={12} className="mt-7 sm:mt-9">
             <div
               dir={isRTL ? "rtl" : "ltr"}
-              className="grid grid-cols-2 gap-x-8 gap-y-3 sm:gap-y-6 max-w-xs"
+              className="grid grid-cols-2 gap-x-8 sm:gap-x-10 gap-y-12 sm:gap-y-10 max-w-md sm:max-w-lg"
             >
               {focusAreas.map((key, i) => (
                 <div key={key} className="text-start">
@@ -62,10 +63,10 @@ export function Hero() {
                     #{String(i + 1).padStart(2, "0")}
                   </p>
                   <p
-                    style={arabicStyle}
-                    className="mt-1.5 text-sm sm:text-base font-semibold text-white leading-snug"
+                    style={{ ...arabicStyle, whiteSpace: !isRTL && i < 3 ? "pre-line" : undefined }}
+                    className="mt-1.5 text-base sm:text-base font-semibold text-white leading-snug"
                   >
-                    {t(key)}
+                    {!isRTL && i < 3 ? t(key).replace(" ", "\n") : t(key)}
                   </p>
                 </div>
               ))}
@@ -74,8 +75,8 @@ export function Hero() {
         </div>
 
         {/* Photo frame */}
-        <Reveal delay={150} className="order-1 lg:order-2 flex justify-center">
-          <div className="relative w-[130px] h-[163px] min-[375px]:w-[150px] min-[375px]:h-[188px] sm:w-[320px] sm:h-[400px] lg:w-full lg:max-w-[400px] lg:h-[520px] xl:max-w-[460px] xl:h-[580px] rounded-[2rem] overflow-hidden shadow-2xl bg-neutral-900">
+        <Reveal delay={150} className="order-1 lg:order-2 flex justify-center -mt-20 sm:mt-0">
+          <div className="relative w-[160px] h-[200px] min-[375px]:w-[180px] min-[375px]:h-[225px] sm:w-[320px] sm:h-[400px] lg:w-full lg:max-w-[400px] lg:h-[520px] xl:max-w-[460px] xl:h-[580px] rounded-[2rem] overflow-hidden shadow-2xl bg-neutral-900">
             {imageFailed ? (
               <div className="w-full h-full flex items-center justify-center">
                 <User className="w-1/3 h-1/3 text-neutral-600" strokeWidth={1.5} />
