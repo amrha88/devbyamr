@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import { LanguageProvider } from "@/lib/i18n"
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/sections/hero"
@@ -17,6 +18,7 @@ function App() {
         <Contact />
         <Footer />
       </div>
+      <Analytics />
     </LanguageProvider>
   )
 }
