@@ -15,7 +15,7 @@ const navLinks: { key: TranslationKey; href: string }[] = [
 
 const socialLinks = [
   { label: "Email", href: "mailto:amrhabiballa8@gmail.com", icon: Mail },
-  { label: "GitHub", href: "https://github.com", icon: GithubIcon },
+  { label: "GitHub", href: "https://github.com/amrha88", icon: GithubIcon },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/amr-habib-alla-01bb28355/", icon: LinkedinIcon },
   { label: "Instagram", href: "https://www.instagram.com/amrhabib.297", icon: InstagramIcon },
 ]
