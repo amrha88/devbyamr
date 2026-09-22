@@ -34,9 +34,6 @@ export function Footer() {
       <div className="grid w-full grid-cols-1 gap-10 md:grid-cols-3 md:gap-8">
         <Reveal className="space-y-4">
           <img src={LOGO} alt="DevByAmr" className="h-7 w-auto object-contain" />
-          <p className="text-sm text-neutral-500">
-            © {new Date().getFullYear()} Amr HA. {t("footer.rights")}
-          </p>
         </Reveal>
 
         <div className="grid grid-cols-2 gap-8 md:col-span-2">
@@ -76,6 +73,20 @@ export function Footer() {
               ))}
             </ul>
           </Reveal>
+        </div>
+      </div>
+
+      <div className="mt-10 pt-6 w-full border-t border-neutral-900 flex flex-col-reverse items-center gap-4 sm:flex-row sm:justify-between">
+        <p className="text-xs text-neutral-600">
+          © {new Date().getFullYear()} Amr HA. {t("footer.rights")}
+        </p>
+        <div className="flex items-center gap-5 text-xs text-neutral-500">
+          <a href="/privacy.html" className="hover:text-white transition-colors duration-300">
+            {t("footer.privacy")}
+          </a>
+          <a href="/terms.html" className="hover:text-white transition-colors duration-300">
+            {t("footer.terms")}
+          </a>
         </div>
       </div>
     </footer>

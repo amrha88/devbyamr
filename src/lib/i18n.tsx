@@ -77,6 +77,8 @@ const translations = {
     "footer.rights": "All rights reserved.",
     "footer.navigate": "Navigate",
     "footer.connect": "Connect",
+    "footer.privacy": "Privacy Policy",
+    "footer.terms": "Terms of Service",
   },
   ar: {
     "nav.home": "الرئيسية",
@@ -151,6 +153,8 @@ const translations = {
     "footer.rights": "جميع الحقوق محفوظة.",
     "footer.navigate": "روابط",
     "footer.connect": "تواصل",
+    "footer.privacy": "سياسة الخصوصية",
+    "footer.terms": "شروط الاستخدام",
   },
 } as const
 
