@@ -60,9 +60,12 @@ const skills = [
   "TypeScript",
   "React",
   "Tailwind CSS",
+  "Machine learning",
+  "Agents",
   "AWS Services",
   "Github",
   "Microsoft office",
+  "RAG",
 ]
 
 const brands = [

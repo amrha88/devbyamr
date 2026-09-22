@@ -9,7 +9,6 @@ const navLinks: { key: TranslationKey; href: string }[] = [
   { key: "nav.home", href: "#home" },
   { key: "nav.about", href: "#about" },
   { key: "nav.projects", href: "#projects" },
-  { key: "nav.experience", href: "#experience" },
   { key: "nav.contact", href: "#contact" },
 ]
 

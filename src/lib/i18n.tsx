@@ -7,7 +7,6 @@ const translations = {
     "nav.home": "HOME",
     "nav.about": "ABOUT",
     "nav.projects": "PROJECTS",
-    "nav.experience": "EXPERIENCE",
     "nav.contact": "CONTACT",
     "nav.socials": "My Socials",
     "hero.greeting": "Hey, I'm a",
@@ -67,8 +66,6 @@ const translations = {
     "projects.featured3.title": "Finance Consulting office",
     "projects.featured3.description":
       "A financial consulting website mockup | from layout to motion, designed to bring a professional and trust-first brand to life on screen.",
-    "experience.eyebrow": "Where I've worked",
-    "experience.title": "Experience",
     "contact.eyebrow": "Get in touch",
     "contact.title": "Let's build something",
     "contact.blurb":
@@ -84,7 +81,6 @@ const translations = {
     "nav.home": "الرئيسية",
     "nav.about": "نبذة",
     "nav.projects": "المشاريع",
-    "nav.experience": "الخبرات",
     "nav.contact": "تواصل",
     "nav.socials": "حساباتي الاجتماعية",
     "hero.greeting": "أهلاً، أنا",
@@ -144,8 +140,6 @@ const translations = {
     "projects.featured3.title": "تساحي تافور",
     "projects.featured3.description":
       "تصميم مبدئي لموقع استشارات مالية — من التخطيط إلى الحركة، صُمم ليُظهر كيف سيبدو ويشعر المنتج النهائي.",
-    "experience.eyebrow": "أماكن عملت بها",
-    "experience.title": "الخبرات",
     "contact.eyebrow": "تواصل معي",
     "contact.title": "لنبنِ شيئًا معًا",
     "contact.blurb": "لديك مشروع في بالك أو تريد فقط أن تقول مرحبًا؟ بريدي مفتوح دائمًا.",
