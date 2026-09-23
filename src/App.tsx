@@ -6,6 +6,7 @@ import { About } from "@/components/sections/about"
 import { Projects } from "@/components/sections/projects"
 import { Contact } from "@/components/sections/contact"
 import { Footer } from "@/components/footer"
+import { Preloader } from "@/components/preloader"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Contact />
         <Footer />
       </div>
+      <Preloader />
       <Analytics />
     </LanguageProvider>
   )
