@@ -3,8 +3,8 @@ import { useEffect, useState } from "react"
 const ACCENT = "#C3E41D"
 const LOGO = "/assets/logo-white.png"
 
-const DURATION = 1100
-const HOLD = 150
+const DURATION = 3200
+const HOLD = 250
 const FADE = 550
 
 const SIZE = 128
@@ -107,10 +107,7 @@ export function Preloader() {
 
       <img src={LOGO} alt="DevByAmr" className="h-7 sm:h-8 w-auto object-contain" />
 
-      <p
-        className="text-xs sm:text-sm tabular-nums tracking-[0.3em] text-neutral-600"
-        style={{ fontFamily: "'Fira Code', monospace" }}
-      >
+      <p className="text-xs sm:text-sm font-semibold tabular-nums tracking-[0.3em] text-neutral-600">
         {String(progress).padStart(3, "0")}%
       </p>
     </div>
