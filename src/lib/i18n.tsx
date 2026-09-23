@@ -21,7 +21,7 @@ const translations = {
     "about.eyebrow": "Who I am",
     "about.title": "About Me",
     "about.intro":
-      "I'm Amr, an Information Systems graduate and freelance developer who turns ideas into real, working products, clean code, thoughtful design and the persistence to see every problem through to the end.",
+      "I'm Amr, a 23-year-old Information Systems graduate and freelance developer who turns ideas into real, working products, clean code, thoughtful design and the persistence to see every problem through to the end.",
     "about.tools": "Tools & Technologies",
     "about.trustedBy": "Brands I've Helped Shape",
     "about.pathEyebrow": "The Path Here",
