@@ -56,6 +56,7 @@ const skills = [
   "SQL",
   "HTML",
   "CSS",
+  "Kotlin",
   "JavaScript",
   "TypeScript",
   "React",
@@ -176,9 +177,9 @@ export function About() {
             </Reveal>
           </div>
 
-          <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+          <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-6 items-stretch">
             <Reveal delay={180} dir={isRTL ? "rtl" : "ltr"}>
-              <div className="h-full flex flex-col justify-center rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl p-5 sm:p-6">
+              <div className="h-full flex flex-col justify-center rounded-t-3xl lg:rounded-3xl border border-b-0 lg:border-b border-white/10 bg-white/5 backdrop-blur-md shadow-2xl p-5 sm:p-6">
                 <span className="h-px w-8 mb-3 block" style={{ backgroundColor: ACCENT }} />
                 <QuoteRotator
                   quotes={quoteKeys.map((q) => ({ text: t(q.textKey), highlight: t(q.highlightKey) }))}
@@ -187,7 +188,7 @@ export function About() {
             </Reveal>
 
             <Reveal delay={200} dir={isRTL ? "rtl" : "ltr"}>
-              <div className="h-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl p-5 sm:p-6">
+              <div className="h-full rounded-b-3xl lg:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl p-5 sm:p-6">
                 <p
                   className="text-xs font-semibold tracking-[0.2em] uppercase mb-4"
                   style={{ color: ACCENT }}
