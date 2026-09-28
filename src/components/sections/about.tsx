@@ -224,13 +224,16 @@ export function About() {
               </div>
               <Marquee duration={22} direction="right" pauseOnHover fadeAmount={20}>
                 {[...brands, ...brands, ...brands].map((brand, i) => (
-                  <div key={`${brand.name}-${i}`} className="mx-8 flex items-center justify-center">
-                    <img
-                      src={brand.src}
-                      alt={brand.name}
-                      className={`${brand.className} w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300`}
-                      style={brand.monochrome ? { filter: "brightness(0) invert(1)" } : undefined}
-                    />
+                  <div key={`${brand.name}-${i}`} className="flex items-center">
+                    <div className="mx-8 flex items-center justify-center">
+                      <img
+                        src={brand.src}
+                        alt={brand.name}
+                        className={`${brand.className} w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300`}
+                        style={brand.monochrome ? { filter: "brightness(0) invert(1)" } : undefined}
+                      />
+                    </div>
+                    <span className="w-1 h-1 rounded-full bg-white/20" />
                   </div>
                 ))}
               </Marquee>
