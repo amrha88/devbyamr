@@ -3,9 +3,10 @@ import { useEffect, useState } from "react"
 const ACCENT = "#C3E41D"
 const LOGO = "/assets/logo-white.png"
 
-const DURATION = 3200
-const HOLD = 250
-const FADE = 550
+// DURATION + HOLD + FADE = 3s total intro
+const DURATION = 2300
+const HOLD = 200
+const FADE = 500
 
 const SIZE = 128
 const STROKE = 3
@@ -26,8 +27,9 @@ export function Preloader() {
 
     const tick = (now: number) => {
       const t = Math.min((now - start) / DURATION, 1)
-      const eased = 1 - Math.pow(1 - t, 3)
-      setProgress(Math.round(eased * 100))
+      // easeInOutCubic: gentle start and finish without the long crawl at the end
+      const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+      setProgress(eased * 100)
 
       if (t < 1) {
         raf = requestAnimationFrame(tick)
@@ -92,7 +94,6 @@ export function Preloader() {
             strokeDasharray={CIRCUMFERENCE}
             strokeDashoffset={offset}
             style={{
-              transition: "stroke-dashoffset 80ms linear",
               filter: `drop-shadow(0 0 6px ${ACCENT}99)`,
             }}
           />
@@ -108,7 +109,7 @@ export function Preloader() {
       <img src={LOGO} alt="DevByAmr" className="h-7 sm:h-8 w-auto object-contain" />
 
       <p className="text-xs sm:text-sm font-semibold tabular-nums tracking-[0.3em] text-neutral-600">
-        {String(progress).padStart(3, "0")}%
+        {String(Math.round(progress)).padStart(3, "0")}%
       </p>
     </div>
   )
