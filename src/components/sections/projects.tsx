@@ -33,7 +33,7 @@ export function Projects() {
             url: "https://www.chefalaa.co.il/",
           },
           {
-            videoSrc: "/videos/locanda-mockup-720.mp4",
+            videoSrc: "/videos/screenRecording-locanda-720.mp4",
             title: t("projects.featured2.title"),
             description: t("projects.featured2.description"),
             bgText: "LOCANDA",
