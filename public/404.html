@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="robots" content="noindex" />
+    <title>404 — DevByAmr</title>
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Manrope:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --accent: #c3e41d;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: #000;
+        color: #e5e5e5;
+        font-family: "Manrope", sans-serif;
+        overflow-x: hidden;
+      }
+      main {
+        position: relative;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 4rem 1.5rem;
+        text-align: center;
+      }
+
+      /* Giant drifting "404" behind everything, like the project wordmarks */
+      .bg-code {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        user-select: none;
+        overflow: hidden;
+      }
+      .bg-code span {
+        font-size: 48vw;
+        font-weight: 800;
+        letter-spacing: -0.05em;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.04);
+        animation: drift 14s ease-in-out infinite;
+      }
+      @keyframes drift {
+        0%,
+        100% {
+          transform: translateX(3vw);
+        }
+        50% {
+          transform: translateX(-3vw);
+        }
+      }
+
+      /* Logo ring, same as the preloader, but stuck at 40% */
+      .ring {
+        position: relative;
+        width: 112px;
+        height: 112px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .ring::before {
+        content: "";
+        position: absolute;
+        inset: -14%;
+        border-radius: 50%;
+        background: var(--accent);
+        opacity: 0.16;
+        filter: blur(28px);
+      }
+      .ring svg {
+        position: absolute;
+        inset: 0;
+        transform: rotate(-90deg);
+      }
+      .ring .arc {
+        stroke-dasharray: 340;
+        stroke-dashoffset: 204;
+        filter: drop-shadow(0 0 6px rgba(195, 228, 29, 0.6));
+        animation: stall 2.4s ease-in-out infinite;
+      }
+      @keyframes stall {
+        0%,
+        100% {
+          stroke-dashoffset: 204;
+        }
+        50% {
+          stroke-dashoffset: 222;
+        }
+      }
+      .ring img {
+        position: relative;
+        width: 56px;
+        height: 56px;
+      }
+
+      .label {
+        margin: 0;
+        color: var(--accent);
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 0.75rem 0 0;
+        color: #fff;
+        font-size: clamp(2.5rem, 9vw, 5rem);
+        font-weight: 800;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+      }
+      .sub {
+        margin: 1rem auto 0;
+        max-width: 26rem;
+        color: #a3a3a3;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      /* Terminal card that echoes the requested path */
+      .term {
+        position: relative;
+        width: 100%;
+        max-width: 30rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1.25rem;
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        text-align: left;
+        overflow: hidden;
+      }
+      .term-bar {
+        display: flex;
+        gap: 6px;
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .term-bar i {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #262626;
+      }
+      .term pre {
+        margin: 0;
+        padding: 1rem 1.1rem 1.2rem;
+        font-family: "Fira Code", monospace;
+        font-size: 0.8rem;
+        line-height: 1.8;
+        color: #737373;
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+      .term .p {
+        color: var(--accent);
+      }
+      .term .w {
+        color: #e5e5e5;
+      }
+      .term .e {
+        color: #f87171;
+      }
+      .cursor {
+        display: inline-block;
+        width: 0.55em;
+        height: 1.05em;
+        vertical-align: -0.2em;
+        background: var(--accent);
+        animation: blink 1s steps(1) infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .back {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.7rem 1.4rem;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.3s, border-color 0.3s;
+      }
+      .back:hover,
+      .back:focus-visible {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: var(--accent);
+      }
+      .back:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      .back span {
+        color: var(--accent);
+        transition: transform 0.3s;
+      }
+      .back:hover span {
+        transform: translateX(-3px);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .bg-code span,
+        .ring .arc,
+        .cursor {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="bg-code" aria-hidden="true"><span>404</span></div>
+
+      <div class="ring" aria-hidden="true">
+        <svg width="112" height="112" viewBox="0 0 112 112">
+          <circle cx="56" cy="56" r="54" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="3" />
+          <circle class="arc" cx="56" cy="56" r="54" fill="none" stroke="#C3E41D" stroke-width="3" stroke-linecap="round" />
+        </svg>
+        <img src="/icon.svg" alt="" />
+      </div>
+
+      <div>
+        <p class="label">Error · 404</p>
+        <h1>Nothing to<br />see here.</h1>
+        <p class="sub">This page doesn't exist. No admin panel, no secret files, just a portfolio.</p>
+      </div>
+
+      <div class="term" aria-label="Request log">
+        <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <pre><span class="p">$</span> <span class="w">GET <span id="path">/this-page</span></span>
+<span class="e">✕ 404</span>  not found
+<span class="p">$</span> <span class="w">ls /secrets</span>
+nice try. there's nothing here.
+<span class="p">$</span> <span class="cursor"></span></pre>
+      </div>
+
+      <a class="back" href="/"><span>←</span> Back to devbyamr.com</a>
+    </main>
+
+    <script>
+      // Echo the requested path; textContent keeps it inert
+      var p = location.pathname + location.search
+      document.getElementById("path").textContent = p.length > 60 ? p.slice(0, 57) + "…" : p
+    </script>
+  </body>
+</html>
