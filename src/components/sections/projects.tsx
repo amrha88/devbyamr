@@ -25,7 +25,7 @@ export function Projects() {
       <ProjectShowcase
         items={[
           {
-            videoSrc: "/videos/chef-alaa-mockup-720.mp4",
+            videoSrc: "/videos/chef-alaa-mockup-540.mp4",
             title: t("projects.featured.title"),
             description: t("projects.featured.description"),
             bgText: "CHEF ALAA",
@@ -33,13 +33,13 @@ export function Projects() {
             url: "https://www.chefalaa.co.il/",
           },
           {
-            videoSrc: "/videos/screenRecording-locanda-720.mp4",
+            videoSrc: "/videos/screenRecording-locanda-540.mp4",
             title: t("projects.featured2.title"),
             description: t("projects.featured2.description"),
             bgText: "LOCANDA",
           },
           {
-            videoSrc: "/videos/finance-office-mockup-720.mp4",
+            videoSrc: "/videos/finance-office-mockup-540.mp4",
             title: t("projects.featured3.title"),
             description: t("projects.featured3.description"),
             bgText: "FINANCE CONSULTING OFFICE",

@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react"
+import { useEffect, useLayoutEffect, useRef, useState } from "react"
 import { ArrowUpRight } from "lucide-react"
 import { Reveal } from "@/components/ui/reveal"
 
@@ -22,6 +22,22 @@ function ProjectCard({ item, delay }: { item: ProjectItem; delay: number }) {
   const bgTextWrapRef = useRef<HTMLDivElement>(null)
   const bgTextSpanRef = useRef<HTMLSpanElement>(null)
   const [driftPx, setDriftPx] = useState(0)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  // Only download/play the video once it's near the viewport, and pause it when it leaves
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) video.play().catch(() => {})
+        else video.pause()
+      },
+      { rootMargin: "200px 0px" },
+    )
+    observer.observe(video)
+    return () => observer.disconnect()
+  }, [])
 
   useLayoutEffect(() => {
     function measure() {
@@ -68,11 +84,11 @@ function ProjectCard({ item, delay }: { item: ProjectItem; delay: number }) {
         <div className="relative flex flex-col items-center gap-6 sm:gap-8">
           <div className="relative w-full aspect-video">
             <video
-              autoPlay
+              ref={videoRef}
               muted
               loop
               playsInline
-              preload="metadata"
+              preload="none"
               className="w-full h-full object-cover rounded-2xl border border-neutral-800 shadow-2xl"
               onLoadedMetadata={(e) => {
                 e.currentTarget.currentTime = item.startTime ?? 0
