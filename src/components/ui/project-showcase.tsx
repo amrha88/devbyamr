@@ -48,7 +48,7 @@ function ProjectCard({ item, delay }: { item: ProjectItem; delay: number }) {
         {item.bgText && (
           <div
             ref={bgTextWrapRef}
-            className="absolute inset-x-0 -top-8 sm:-top-14 flex items-start justify-center pointer-events-none select-none overflow-hidden"
+            className="absolute inset-x-0 -top-[10vw] sm:-top-[6.5vw] flex items-start justify-center pointer-events-none select-none overflow-hidden"
           >
             <span
               ref={bgTextSpanRef}
@@ -105,7 +105,7 @@ function ProjectCard({ item, delay }: { item: ProjectItem; delay: number }) {
 
 export function ProjectShowcase({ items, className = "" }: ProjectShowcaseProps) {
   return (
-    <div className={`flex flex-col pt-16 sm:pt-20 ${className}`}>
+    <div className={`flex flex-col pt-20 sm:pt-28 ${className}`}>
       {items.map((item, i) => (
         <div key={item.videoSrc}>
           {i > 0 && (
