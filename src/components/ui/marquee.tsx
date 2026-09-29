@@ -29,27 +29,30 @@ export function Marquee({
       <style>
         {`
         @keyframes scroll {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
+          from { transform: translate3d(0, 0, 0); }
+          to { transform: translate3d(-50%, 0, 0); }
         }
 
         @keyframes scroll-reverse {
-          from { transform: translateX(-50%); }
-          to { transform: translateX(0); }
+          from { transform: translate3d(-50%, 0, 0); }
+          to { transform: translate3d(0, 0, 0); }
         }
 
         @keyframes scroll-y {
-          from { transform: translateY(0); }
-          to { transform: translateY(-50%); }
+          from { transform: translate3d(0, 0, 0); }
+          to { transform: translate3d(0, -50%, 0); }
         }
 
         @keyframes scroll-y-reverse {
-          from { transform: translateY(-50%); }
-          to { transform: translateY(0); }
+          from { transform: translate3d(0, -50%, 0); }
+          to { transform: translate3d(0, 0, 0); }
         }
 
         .marquee-scroller {
           display: flex;
+          will-change: transform;
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
           animation: ${
             isVertical
               ? direction === "up"
@@ -69,6 +72,8 @@ export function Marquee({
       <div
         className={cn("flex w-full overflow-hidden", isVertical && "flex-col", className)}
         style={{
+          // Own compositing layer so iOS Safari doesn't drop the animated strip while scrolling
+          transform: "translateZ(0)",
           ...(fade && {
             maskImage: isVertical
               ? `linear-gradient(to bottom, transparent 0%, black ${fadeAmount}%, black ${100 - fadeAmount}%, transparent 100%)`
@@ -78,8 +83,8 @@ export function Marquee({
               : `linear-gradient(to right, transparent 0%, black ${fadeAmount}%, black ${100 - fadeAmount}%, transparent 100%)`,
           }),
         }}
-        onMouseEnter={() => pauseOnHover && setIsPaused(true)}
-        onMouseLeave={() => pauseOnHover && setIsPaused(false)}
+        onPointerEnter={(e) => pauseOnHover && e.pointerType === "mouse" && setIsPaused(true)}
+        onPointerLeave={(e) => pauseOnHover && e.pointerType === "mouse" && setIsPaused(false)}
         {...props}
       >
         <div
