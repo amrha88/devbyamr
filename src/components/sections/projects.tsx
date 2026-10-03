@@ -37,6 +37,7 @@ export function Projects() {
             title: t("projects.featured2.title"),
             description: t("projects.featured2.description"),
             bgText: "LOCANDA",
+            url: "https://www.locandares.com/",
           },
           {
             videoSrc: "/videos/finance-office-mockup-540.mp4",
