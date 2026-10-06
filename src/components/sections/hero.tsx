@@ -1,16 +1,13 @@
-import { useState } from "react"
-import { User } from "lucide-react"
 import { BlurText } from "@/components/ui/blur-text"
 import { Reveal } from "@/components/ui/reveal"
 import { ARABIC_FONT, useLanguage, type TranslationKey } from "@/lib/i18n"
 
 const ACCENT = "#C3E41D"
-const PROFILE_SRC = "/assets/profile.jpg"
+const PORTRAIT_SRCSET = "/assets/hero/portrait-800.jpg 800w, /assets/hero/portrait-1400.jpg 1400w"
 
 const focusAreas: TranslationKey[] = ["hero.focus1", "hero.focus2", "hero.focus3", "hero.focus4"]
 
 export function Hero() {
-  const [imageFailed, setImageFailed] = useState(false)
   const { t, isRTL } = useLanguage()
   const arabicStyle = isRTL ? { fontFamily: ARABIC_FONT } : undefined
   const roleText = isRTL ? t("hero.role") : t("hero.role").replace(" ", " \n ")
@@ -19,11 +16,36 @@ export function Hero() {
     <section
       id="home"
       dir={isRTL ? "rtl" : "ltr"}
-      className="relative sm:min-h-dvh flex items-center px-8 pt-16 sm:pt-24 pb-10 sm:pb-20"
+      className="relative overflow-hidden lg:min-h-dvh flex items-center px-8 pt-16 lg:pt-24 pb-10 sm:pb-20"
     >
-      <div className="max-w-screen-xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 sm:gap-10 lg:gap-16 items-center mt-28 sm:mt-0">
+      {/* Background portrait: full-width top on mobile/tablet, side panel on desktop */}
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-x-0 top-0 h-[78svh] sm:h-[88svh] lg:inset-x-auto lg:inset-y-0 lg:h-auto lg:w-[55%] ${
+          isRTL ? "lg:left-0" : "lg:right-0"
+        }`}
+      >
+        <img
+          src="/assets/hero/portrait-800.jpg"
+          srcSet={PORTRAIT_SRCSET}
+          sizes="(min-width: 1024px) 55vw, 100vw"
+          alt=""
+          fetchPriority="high"
+          decoding="async"
+          className="h-full w-full object-cover object-[50%_22%] brightness-[0.95] contrast-[1.05]"
+        />
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/50 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-[50%] bg-gradient-to-t from-black via-black/60 to-transparent lg:h-1/4" />
+        <div
+          className={`absolute inset-y-0 hidden lg:block w-2/5 from-black via-black/40 to-transparent ${
+            isRTL ? "right-0 bg-gradient-to-l" : "left-0 bg-gradient-to-r"
+          }`}
+        />
+      </div>
+
+      <div className="relative max-w-screen-xl mx-auto w-full mt-[44svh] sm:mt-[56svh] lg:mt-0">
         {/* Text */}
-        <div className="text-start order-2 lg:order-1 mt-4 sm:mt-0">
+        <div className="text-start max-w-xl lg:max-w-[52%]">
           <Reveal y={10}>
             <p
               style={{ color: ACCENT, ...arabicStyle }}
@@ -73,29 +95,6 @@ export function Hero() {
             </div>
           </Reveal>
         </div>
-
-        {/* Photo frame */}
-        <Reveal delay={150} className="order-1 lg:order-2 flex justify-center -mt-20 sm:mt-0">
-          <div className="relative w-[150px] h-[188px] min-[375px]:w-[160px] min-[375px]:h-[200px] sm:w-[320px] sm:h-[400px] lg:w-full lg:max-w-[400px] lg:h-[520px] xl:max-w-[460px] xl:h-[580px] rounded-[2rem] overflow-hidden shadow-2xl bg-neutral-900">
-            {imageFailed ? (
-              <div className="w-full h-full flex items-center justify-center">
-                <User className="w-1/3 h-1/3 text-neutral-600" strokeWidth={1.5} />
-              </div>
-            ) : (
-              <img
-                src={PROFILE_SRC}
-                alt="Amr HA"
-                className="w-full h-full object-cover"
-                onError={() => setImageFailed(true)}
-              />
-            )}
-            <div className="pointer-events-none absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/10" />
-            <div
-              className="pointer-events-none absolute inset-0 rounded-[2rem] ring-1 ring-inset"
-              style={{ boxShadow: `0 0 0 1px ${ACCENT}33, 0 0 40px -8px ${ACCENT}66` }}
-            />
-          </div>
-        </Reveal>
       </div>
     </section>
   )
