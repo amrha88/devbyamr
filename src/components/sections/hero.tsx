@@ -21,7 +21,7 @@ export function Hero() {
       {/* Background portrait: full-width top on mobile/tablet, side panel on desktop */}
       <div
         aria-hidden="true"
-        className={`pointer-events-none absolute inset-x-0 top-0 h-[66svh] sm:h-[88svh] lg:inset-x-auto lg:inset-y-0 lg:h-auto lg:w-[55%] ${
+        className={`pointer-events-none absolute inset-x-0 top-0 h-[70svh] sm:h-[88svh] lg:inset-x-auto lg:inset-y-0 lg:h-auto lg:w-[55%] ${
           isRTL ? "lg:left-0" : "lg:right-0"
         }`}
       >
@@ -43,7 +43,7 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative max-w-screen-xl mx-auto w-full mt-[30svh] sm:mt-[56svh] lg:mt-0">
+      <div className="relative max-w-screen-xl mx-auto w-full mt-[36svh] sm:mt-[56svh] lg:mt-0">
         {/* Text */}
         <div className="text-start max-w-xl lg:max-w-[52%]">
           <Reveal y={10}>
