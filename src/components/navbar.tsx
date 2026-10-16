@@ -5,7 +5,7 @@ import { InstagramIcon, LinkedinIcon, WhatsappIcon } from "@/components/icons"
 import { useScrollSpy } from "@/hooks/use-scroll-spy"
 import { ARABIC_FONT, useLanguage, type TranslationKey } from "@/lib/i18n"
 
-const LOGO = "/assets/logo-white.png"
+const LOGO = "/assets/logo-white.webp"
 const ACCENT = "#C3E41D"
 
 const socialLinks = [

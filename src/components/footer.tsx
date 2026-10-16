@@ -3,7 +3,7 @@ import { GithubIcon, InstagramIcon, LinkedinIcon } from "@/components/icons"
 import { Reveal } from "@/components/ui/reveal"
 import { ARABIC_FONT, useLanguage, type TranslationKey } from "@/lib/i18n"
 
-const LOGO = "/assets/logo-white.png"
+const LOGO = "/assets/logo-white.webp"
 
 const navLinks: { key: TranslationKey; href: string }[] = [
   { key: "nav.home", href: "#home" },

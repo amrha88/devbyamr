@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 const ACCENT = "#C3E41D"
-const LOGO = "/assets/logo-white.png"
+const LOGO = "/assets/logo-white.webp"
 
 // DURATION + HOLD + FADE = 3s total intro
 const DURATION = 2300

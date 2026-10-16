@@ -3,7 +3,8 @@ import { Reveal } from "@/components/ui/reveal"
 import { ARABIC_FONT, useLanguage, type TranslationKey } from "@/lib/i18n"
 
 const ACCENT = "#C3E41D"
-const PORTRAIT_SRCSET = "/assets/hero/portrait-800.jpg 800w, /assets/hero/portrait-1400.jpg 1400w"
+const PORTRAIT_SRCSET =
+  "/assets/hero/portrait-600.webp 600w, /assets/hero/portrait-900.webp 900w, /assets/hero/portrait-1400.webp 1400w"
 
 const focusAreas: TranslationKey[] = ["hero.focus1", "hero.focus2", "hero.focus3", "hero.focus4"]
 
@@ -26,7 +27,7 @@ export function Hero() {
         }`}
       >
         <img
-          src="/assets/hero/portrait-800.jpg"
+          src="/assets/hero/portrait-900.webp"
           srcSet={PORTRAIT_SRCSET}
           sizes="(min-width: 1024px) 55vw, 100vw"
           alt=""

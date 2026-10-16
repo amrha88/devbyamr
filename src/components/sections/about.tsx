@@ -70,9 +70,9 @@ const skills = [
 ]
 
 const brands = [
-  { name: "Locanda", src: "/Locanda-logo.png", className: "h-6 sm:h-7", monochrome: true },
-  { name: "chefalaa.co.il", src: "/chef's-logo.png", className: "h-10 sm:h-12", monochrome: true },
-  { name: "Rotary Club Nazareth", src: "/rotary-logo.png", className: "h-16 sm:h-20 rounded-xl" },
+  { name: "Locanda", src: "/brands/locanda-logo.webp", className: "h-6 sm:h-7", monochrome: true },
+  { name: "chefalaa.co.il", src: "/brands/chef-logo.webp", className: "h-10 sm:h-12", monochrome: true },
+  { name: "Rotary Club Nazareth", src: "/brands/rotary-logo.webp", className: "h-16 sm:h-20 rounded-xl" },
 ]
 
 const stats: { value: string; labelKey: TranslationKey }[] = [
@@ -229,6 +229,8 @@ export function About() {
                       <img
                         src={brand.src}
                         alt={brand.name}
+                        loading="lazy"
+                        decoding="async"
                         className={`${brand.className} w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300`}
                         style={brand.monochrome ? { filter: "brightness(0) invert(1)" } : undefined}
                       />
