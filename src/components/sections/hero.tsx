@@ -17,7 +17,7 @@ export function Hero() {
     <section
       id="home"
       dir={isRTL ? "rtl" : "ltr"}
-      className="relative overflow-hidden lg:min-h-dvh flex items-center px-8 pt-16 lg:pt-24 pb-10 sm:pb-20"
+      className="relative overflow-hidden lg:min-h-dvh flex items-center px-8 lg:px-12 pt-16 lg:pt-24 pb-10 sm:pb-20"
     >
       {/* Background portrait: full-width top on mobile/tablet, side panel on desktop */}
       <div
@@ -44,13 +44,13 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative max-w-screen-xl mx-auto w-full mt-[36svh] sm:mt-[56svh] lg:mt-0">
+      <div className="relative max-w-screen-xl lg:max-w-none mx-auto w-full mt-[36svh] sm:mt-[56svh] lg:mt-0">
         {/* Text */}
-        <div className="text-start max-w-xl lg:max-w-[52%]">
+        <div className="text-start max-w-xl lg:max-w-[42vw]">
           <Reveal y={10}>
             <p
               style={{ color: ACCENT, ...arabicStyle }}
-              className="text-sm sm:text-base font-semibold tracking-[0.15em] mb-4 sm:mb-4"
+              className="text-sm sm:text-base 2xl:text-lg font-semibold tracking-[0.15em] mb-4 sm:mb-4 2xl:mb-6"
             >
               {t("hero.greeting")}
             </p>
@@ -62,14 +62,14 @@ export function Hero() {
             animateBy="words"
             direction="top"
             dir={isRTL ? "rtl" : "ltr"}
-            className="text-5xl min-[375px]:text-6xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tight text-white justify-start"
+            className="text-5xl min-[375px]:text-6xl sm:text-6xl md:text-7xl lg:text-[clamp(4.5rem,6.2vw,9rem)] font-black leading-[0.95] tracking-tight text-white justify-start"
             style={arabicStyle}
           />
 
           <Reveal delay={200} y={12}>
             <p
               style={arabicStyle}
-              className="mt-5 sm:mt-7 max-w-[320px] sm:max-w-md text-sm sm:text-xl leading-snug sm:leading-relaxed text-neutral-400"
+              className="mt-5 sm:mt-7 max-w-[320px] sm:max-w-md 2xl:max-w-xl text-sm sm:text-xl 2xl:text-2xl leading-snug sm:leading-relaxed text-neutral-400"
             >
               {t("hero.description")}
             </p>
@@ -78,16 +78,16 @@ export function Hero() {
           <Reveal delay={350} y={12} className="mt-5 sm:mt-9">
             <div
               dir={isRTL ? "rtl" : "ltr"}
-              className="grid grid-cols-2 gap-x-6 sm:gap-x-10 gap-y-8 sm:gap-y-10 max-w-md sm:max-w-lg"
+              className="grid grid-cols-2 gap-x-6 sm:gap-x-10 gap-y-8 sm:gap-y-10 max-w-md sm:max-w-lg 2xl:max-w-2xl"
             >
               {focusAreas.map((key, i) => (
                 <div key={key} className="text-start">
-                  <p className="text-sm font-bold tracking-wide" style={{ color: ACCENT }}>
+                  <p className="text-sm 2xl:text-base font-bold tracking-wide" style={{ color: ACCENT }}>
                     #{String(i + 1).padStart(2, "0")}
                   </p>
                   <p
                     style={{ ...arabicStyle, whiteSpace: !isRTL && i < 3 ? "pre-line" : undefined }}
-                    className="mt-1 text-base sm:text-base font-semibold text-white leading-snug"
+                    className="mt-1 text-base sm:text-base 2xl:text-xl font-semibold text-white leading-snug"
                   >
                     {!isRTL && i < 3 ? t(key).replace(" ", "\n") : t(key)}
                   </p>
